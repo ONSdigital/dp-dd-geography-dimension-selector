@@ -84,7 +84,7 @@ export function saveDimensionOptions({dimensionID, options}) {
 }
 
 export function requestDimensions(datasetID) {
-    const url = `${API_URL}/datasets/${datasetID}/dimensions`
+    const url = `${API_URL}/datasets/${datasetID}/dimensions.json`
 
     return (dispatch) => {
         dispatch({
@@ -146,7 +146,7 @@ export function parseDimensions(datasetID, dimensionsJSON) {
 }
 
 export function requestMetadata(id) {
-    const url = `${API_URL}/datasets/${id}`;
+    const url = `${API_URL}/datasets/${id}.json`;
 
     return dispatch => {
         dispatch({
