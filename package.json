@@ -4,7 +4,7 @@
   "description": "dp-dd-react-app",
   "main": "index.js",
   "config": {
-    "port": 20040
+    "port": 20041
   },
   "scripts": {
     "clear": "rm dist/bundle.js*",
