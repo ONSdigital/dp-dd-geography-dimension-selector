@@ -1,4 +1,4 @@
-import Customise from './components/Customise';
+import Customise from './components/Dimension';
 import Details from './components/Details';
 import Download from './components/Download';
 

@@ -15,7 +15,7 @@ export default class DimensionItem extends Component {
     }
 
     render() {
-        const dimensionURL = `${config.BASE_PATH}/dataset/${this.props.datasetID}/customise/${this.props.id}`;
+        const dimensionURL = `${config.BASE_PATH}/dataset/${this.props.datasetID}/dimension/${this.props.id}`;
         return (
             <li className="margin-left--0 padding-bottom--2 padding-top--2 border-top--gallery-md border-bottom--gallery-md col-wrap width-lg--39">
                 <div className="col col--md-8 col--lg-8">

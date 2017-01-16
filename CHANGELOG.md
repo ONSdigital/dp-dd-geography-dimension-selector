@@ -1,8 +1,11 @@
 Change log
 ==========
 
-0.2.0 (2016-10-24)
-- Another example changelog entry
 
-0.1.0 (2016-10-20)
-- Example changelog entry
+
+Updated routing
+ - `/dataset/:id/customise/:dimensionID` changed to `/dataset/:id/dimension/:dimensionID`
+ - new route `/dataset/:id/dimension/:dimensionID/customise`
+ - new route `/dataset/:id/dimension/:dimensionID/browse`
+ - new route `/dataset/:id/dimension/:dimensionID/search`
+ - new route `/dataset/:id/dimension/:dimensionID/summary`

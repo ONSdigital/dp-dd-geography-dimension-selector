@@ -18,13 +18,13 @@ const propTypes = {
     dimensions: PropTypes.array
 }
 
-class Customise extends Component {
+class Dimension extends Component {
     constructor(props) {
         super(props)
         this.state = {
             initialFetchRequired: false,
             parentPath: `${config.BASE_PATH}/dataset/${this.props.params.id}/`,
-            currentPath: `${config.BASE_PATH}/dataset/${this.props.params.id}/customise`,
+            currentPath: `${config.BASE_PATH}/dataset/${this.props.params.id}/dimensions`,
             downloadPath: `${config.BASE_PATH}/dataset/${this.props.params.id}/download`
         }
     }
@@ -110,7 +110,7 @@ class Customise extends Component {
     }
 }
 
-Customise.propTypes = propTypes;
+Dimension.propTypes = propTypes;
 
 function mapStateToProps(state) {
     return {
@@ -121,4 +121,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Customise);
+export default connect(mapStateToProps)(Dimension);
