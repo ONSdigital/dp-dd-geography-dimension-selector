@@ -60,6 +60,7 @@
   {
     "id": "D000126",
     "name": "Geography",
+    "type": "geography",
     "options": [
       {
         "id": "K04000001",
