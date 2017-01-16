@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 
 import config from '../../../config';
@@ -77,7 +77,7 @@ class DimensionSelector extends Component {
         let allEnabled = true;
         let allDisabled = true;
 
-        const cachedOptions = this.state.cachedOptions.map((option) => {
+        this.state.cachedOptions.forEach((option) => {
             if (option.selected) {
                 allDisabled = false;
             } else {
