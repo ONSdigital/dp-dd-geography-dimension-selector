@@ -60,7 +60,8 @@ class Dimension extends Component {
         }
         const defaultProps = {
             datasetID: props.params.id,
-            dimensionID: props.params.dimensionID
+            dimensionID: props.params.dimensionID,
+            location: props.location
         }
         const componentProps = Object.assign({}, props, defaultProps);
 
