@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 
-import config from '../../../config';
-import Checkbox from '../../../components/elements/Checkbox';
-import ToggleLink from '../../../components/elements/ToggleLink';
+import config from '../../../../config';
+import Checkbox from '../../../../components/elements/Checkbox';
+import ToggleLink from '../../../../components/elements/ToggleLink';
 
 import {
     saveDimensionOptions
-} from '../actions';
+} from '../../actions';
 
 const propTypes = {
     datasetID: PropTypes.string.isRequired,

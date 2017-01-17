@@ -14,7 +14,7 @@ import {
 } from '../actions';
 
 import DimensionList from './DimensionList';
-import DimensionSelector from './DimensionSelector';
+import DimensionSelector from './dimension/DimensionSelector';
 import DocumentTitle from '../../../components/elements/DocumentTitle';
 
 const propTypes = {
