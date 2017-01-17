@@ -151,16 +151,15 @@ class DimensionSelector extends Component {
 
 DimensionSelector.propTypes = propTypes;
 
-
 function mapStateToProps(state, ownProps) {
-    const dataset = state.dataset;
-    const dimension = dataset.dimensions.find((dimension) => {
+    const dimension = state.dataset.dimensions.find((dimension) => {
         return dimension.id === ownProps.dimensionID;
     });
+    const options = ownProps.options || dimension.options;
 
     return {
         dimension,
-        options: dimension.options,
+        options,
         optionsCount: dimension.optionsCount
     }
 }
