@@ -65,7 +65,6 @@
       {
         "id": "K04000001",
         "name": "England and Wales",
-        "count": 1,
         "optionTypes": "Countries",
         "options": [
           {
@@ -98,14 +97,17 @@
               },
               {
                 "id": "E12000002",
+                "optionTypes": "Locations",
                 "name": "North West"
               },
               {
                 "id": "E12000003",
+                "optionTypes": "Locations",
                 "name": "Yorkshire and The Humber"
               },
               {
                 "id": "E12000004",
+                "optionTypes": "Locations",
                 "name": "East Midlands"
               }
             ]
