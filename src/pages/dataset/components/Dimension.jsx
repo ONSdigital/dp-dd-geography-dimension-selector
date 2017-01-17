@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import config from '../../../config';
 
+import Browser from './dimension/Browser';
+import Customisation from './dimension/Customisation';
+import Search from './dimension/Search';
+import Summary from './dimension/Summary';
+
 import {
     requestMetadata,
     requestDimensions
@@ -48,9 +53,26 @@ class Dimension extends Component {
     }
 
     render() {
-        if (!this.props.hasDimensions) return null;
-        if (this.props.params.dimensionID === undefined) {
+        const props = this.props;
+        if (!props.hasDimensions) return null;
+        if (props.params.dimensionID === undefined) {
             return this.renderDimensionList();
+        }
+        const defaultProps = {
+            datasetID: props.params.id,
+            dimensionID: props.params.dimensionID
+        }
+        const componentProps = Object.assign({}, props, defaultProps);
+
+        switch (props.location.query.action) {
+            case 'customise':
+                return <Customisation {...componentProps} />;
+            case 'browse':
+                return <Browser {...componentProps} />;
+            case 'search':
+                return <Search {...componentProps} />;
+            case 'summary':
+                return <Summary {...componentProps} />;
         }
         return this.renderDimensionSelector();
     }

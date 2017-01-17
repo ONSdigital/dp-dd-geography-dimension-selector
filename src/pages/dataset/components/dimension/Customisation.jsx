@@ -16,9 +16,7 @@ class Customisation extends Component {
     }
 
     render () {
-        const datasetID = this.props.params.id;
-        const dimensionID = this.props.params.dimensionID;
-        const basePath = `${config.BASE_PATH}/dataset/${datasetID}/dimension/${dimensionID}`;
+        const pathname = this.props.location.pathname;
 
         return (
             <div className="margin-top--2">
@@ -27,12 +25,12 @@ class Customisation extends Component {
                 <h3>Customise location</h3>
 
                 <p>
-                    <Link to={`${basePath}/search`}>Search</Link><br />
+                    <Link to={{ pathname, query: { action: 'search' }}}>Search</Link><br />
                     Search for specific location
                 </p>
 
                 <p>
-                    <Link to={`${basePath}/browse`}>Browse</Link><br />
+                    <Link to={{ pathname: pathname, query: { action: 'browse' }}}>Browse</Link><br />
                     Search for location from the list
                 </p>
 

@@ -17,8 +17,13 @@ export default class DimensionItem extends Component {
 
     render() {
         const props = this.props;
-        const postfix =  props.type && props.type === 'geography' ? '/customise' : '';
-        const dimensionURL = `${config.BASE_PATH}/dataset/${props.datasetID}/dimension/${props.id}${postfix}`;
+        //const postfix =  props.type && props.type === 'geography' ? '/customise' : '';
+        const action = props.type && props.type === 'geography' ? 'customise' : null;
+        const destination = {
+            pathname: `${config.BASE_PATH}/dataset/${props.datasetID}/dimension/${props.id}`,
+            query: action ? { action } : {}
+        }
+
 
         return (
             <li className="margin-left--0 padding-bottom--2 padding-top--2 border-top--gallery-md border-bottom--gallery-md col-wrap width-lg--39">
@@ -29,7 +34,7 @@ export default class DimensionItem extends Component {
                     {this.props.label}
                 </div>
                 <div className="col col--md-6 col--lg-6">
-                    <Link to={dimensionURL} className="float-right">Customise</Link>
+                    <Link to={destination} className="float-right">Customise</Link>
                 </div>
             </li>
 
