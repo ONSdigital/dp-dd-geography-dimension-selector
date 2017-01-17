@@ -65,50 +65,104 @@
       {
         "id": "K04000001",
         "name": "England and Wales",
+        "count": 1,
+        "optionTypes": [
+          {
+            "name": "Countries",
+            "type": "country",
+            "count": 2
+          }
+        ],
         "options": [
           {
             "id": "E92000001",
             "name": "England",
+            "type": "country",
+            "optionTypes": [
+              {
+                "name": "Regions",
+                "type": "region",
+                "count": 5
+              },
+              {
+                "name": "Local authority districts",
+                "type": "authority",
+                "count": 187
+              }
+            ],
             "options": [
               {
                 "id": "E12000001",
                 "name": "North East",
+                "type": "region",
                 "options": [
                   {
                     "id": "2000017",
+                    "type": "authority",
                     "name": "Hartlepool"
                   },
                   {
                     "id": "2000018",
+                    "type": "authority",
                     "name": "Middlesbrough"
                   },
                   {
                     "id": "2000019",
+                    "type": "authority",
                     "name": "Redcar and Cleveland"
                   },
                   {
                     "id": "2000020",
+                    "type": "authority",
                     "name": "Stockton-on-Tees"
                   }
                 ]
               },
               {
                 "id": "E12000002",
+                "type": "region",
                 "name": "North West"
               },
               {
                 "id": "E12000003",
+                "type": "region",
                 "name": "Yorkshire and The Humber"
               },
               {
                 "id": "E12000004",
+                "type": "region",
                 "name": "East Midlands"
               }
             ]
           },
           {
             "id": "W92000004",
-            "name": "Wales"
+            "name": "Wales",
+            "type": "country",
+            "optionTypes": [
+              {
+                "name": "Local authority districts",
+                "type": "authority",
+                "count": 18
+              }
+            ],
+            "options": [
+              {
+                "id": "2000017",
+                "type": "authority",
+                "name": "Authority 1"
+              },
+              {
+                "id": "2000018",
+                "type": "authority",
+                "name": "Authority 2"
+              },
+              {
+                "id": "2000019",
+                "type": "authority",
+                "name": "Authority 3"
+              }
+            ]
           }
         ]
       }
