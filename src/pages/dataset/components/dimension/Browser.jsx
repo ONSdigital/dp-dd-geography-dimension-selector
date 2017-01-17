@@ -47,7 +47,7 @@ class Browser extends Component {
         const options = this.props.options;
         const optionsAreParents = options instanceof Array && options.length > 0 && !!options[0].options;
         return (
-            <div>
+            <div className="margin-bottom--8">
                 <div className="margin-top--2">
                     <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
                 </div>
@@ -55,10 +55,6 @@ class Browser extends Component {
                     ? this.renderDimensionSelector()
                     : <ul>{this.renderOptions()}</ul>
                 })()}
-                <hr/>
-                <pre>
-                {JSON.stringify(this.props.options, null, 2)}
-                </pre>
             </div>
         )
     }
@@ -87,16 +83,27 @@ class Browser extends Component {
         const action = this.props.location.query.action;
         const options = this.props.options;
 
-        return options.map((dimension, index) => {
+        return options.map((option, index) => {
             const query = {
                 action,
-                id: dimension.id,
+                id: option.id,
                 parent
             };
+            let label = option.name;
+            if (option.optionTypes) {
+                label = `${option.optionTypes} in ${option.name}`;
+            }
+            if (option.options) {
+                label += ` (${option.options.length})`;
+            }
+            let info = option.options && option.options.length > 0 ?`For example ${option.options[0].name}` : '';
 
-            return <li key={index}>
-                <Link to={{ pathname, query }}>{dimension.name}</Link>
-            </li>
+            return (
+                <div key={index} className="margin-top">
+                    <Link to={{ pathname, query }}>{label}</Link><br />
+                    <span>{info}</span>
+                </div>
+            )
         })
     }
 }
