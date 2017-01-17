@@ -14,7 +14,7 @@ import {
 } from '../actions';
 
 import DimensionList from './DimensionList';
-import DimensionSelector from './dimension/DimensionSelector';
+import Selector from './dimension/Selector';
 import DocumentTitle from '../../../components/elements/DocumentTitle';
 
 const propTypes = {
@@ -126,7 +126,7 @@ class Dimension extends Component {
                     <Link to={parentPath} className="btn--everything">Back</Link>
                 </div>
                 <div>
-                    <DimensionSelector {...selectorProps} />
+                    <Selector {...selectorProps} />
                 </div>
             </div>
         )

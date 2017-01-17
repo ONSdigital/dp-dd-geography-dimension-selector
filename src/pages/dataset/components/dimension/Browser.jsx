@@ -1,11 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 
+import Selector from './Selector';
 import {
     requestMetadata,
     requestDimensions
 } from '../../actions';
+
+
+const propTypes = {
+    dimensionID: PropTypes.string.isRequired,
+    datasetID: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
+    options: PropTypes.array.isRequired
+}
 
 class Browser extends Component {
     constructor(props) {
@@ -35,19 +44,17 @@ class Browser extends Component {
     }
 
     render () {
-        const pathname = this.props.location.pathname;
         const options = this.props.options;
+        const optionsAreParents = options instanceof Array && options.length > 0 && !!options[0].options;
         return (
             <div>
-            <h3>Browse</h3>
-                <ul>
-                    {options.map((dimension, index) => {
-                        return <li key={index}>
-                            <Link to={{ pathname, query: { id: dimension.id }}}>{dimension.name}</Link>
-                        </li>
-                    })}
-                </ul>
-
+                <div className="margin-top--2">
+                    <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
+                </div>
+                {(() => {return !optionsAreParents
+                    ? this.renderDimensionSelector()
+                    : <ul>{this.renderOptions()}</ul>
+                })()}
                 <hr/>
                 <pre>
                 {JSON.stringify(this.props.options, null, 2)}
@@ -55,18 +62,85 @@ class Browser extends Component {
             </div>
         )
     }
+
+    renderDimensionSelector() {
+        if (!this.props.hasDimensions) {
+            return null;
+        }
+
+        const selectorProps = {
+            router: this.props.router,
+            datasetID: this.props.params.id,
+            dimensionID: this.props.params.dimensionID,
+            options: this.props.options,
+            onSave: () => {
+                debugger;
+                //this.props.router.push()
+            }
+        }
+
+        return <Selector {...selectorProps} />
+    }
+
+    renderOptions () {
+        const pathname = this.props.location.pathname;
+        const action = this.props.location.query.action;
+        const options = this.props.options;
+
+        return options.map((dimension, index) => {
+            const query = {
+                action,
+                id: dimension.id,
+                parent
+            };
+
+            return <li key={index}>
+                <Link to={{ pathname, query }}>{dimension.name}</Link>
+            </li>
+        })
+    }
+}
+
+Browser.propTypes = propTypes;
+
+function findOptionsByType({options, type}) {
+    return options.filter(option => {
+        return option.type === type
+    });
+}
+
+function findOptionsByParentID({options, id}) {
+    let retOptions = null;
+    let index = 0;
+
+    while (!retOptions && index < options.length) {
+        const option = options[index];
+        if (option.id === id) {
+            return option.options;
+        }
+        if (option.options) {
+            retOptions = findOptionsByParentID({ options: option.options, id });
+        }
+        index++;
+    }
+
+    return retOptions;
 }
 
 function mapStateToProps(state, ownProps) {
     const dataset = state.dataset;
+    const optionID = ownProps.location.query.id || null;
     const dimension = dataset.dimensions.find((dimension) => {
         return dimension.id === ownProps.dimensionID;
     });
-    const options = dimension.options;
+
+    const options = optionID
+        ? findOptionsByParentID({ options: dimension.options, id: optionID })
+        : dimension.options;
 
     return {
         dimension,
-        options,
+        options: options || [],
         optionsCount: dimension.optionsCount
     }
 }
