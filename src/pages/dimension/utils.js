@@ -45,3 +45,41 @@ export function findOptionsByParentID ({options, id}) {
 
     return retOptions;
 }
+
+export function filterOptions({options, filter = {}}) {
+    const keys = Object.keys(filter);
+    return options.filter(option => {
+        let matches = true;
+        keys.forEach( key => {
+            if (option[key] !== filter[key]) {
+                matches = false;
+            }
+        })
+        return matches;
+    }).map(option => {
+        option = Object.assign({}, option);
+        delete option.options;
+        return option;
+    });
+}
+
+export function renderFlatHierarchy ({ hierarchy, filter = {} }) {
+    const list = [];
+    if (!hierarchy instanceof Array) {
+        hierarchy = [hierarchy];
+    }
+
+    hierarchy.forEach(element => {
+        if (element.options) {
+            list.push(Object.assign({}, element, {
+                options: filterOptions({options: element.options, filter})
+            }));
+
+            Array.prototype.push.apply(list, renderFlatHierarchy({
+                hierarchy: element.options,
+                filter
+            }));
+        }
+    })
+    return list;
+}
