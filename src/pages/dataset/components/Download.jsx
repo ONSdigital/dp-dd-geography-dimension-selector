@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 import config from '../../../config';
 import FileTypesHelp from '../../../components/elements/FileTypesHelp';
@@ -129,7 +129,7 @@ class Download extends Component {
 
                 <div className="margin-top--3 margin-bottom--8">
                     <a className="btn btn--primary btn--thick btn--wide btn--big margin-right--half" onClick={this.saveOptions}>Generate files</a>
-                    <a className="btn btn--secondary btn--thick btn--wide btn--big" onClick={browserHistory.goBack}>Cancel</a>
+                    <a className="btn btn--secondary btn--thick btn--wide btn--big" onClick={hashHistory.goBack}>Cancel</a>
                 </div>
             </div>
         )

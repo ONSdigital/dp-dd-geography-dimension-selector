@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 
 class Customisation extends Component {
@@ -17,7 +17,7 @@ class Customisation extends Component {
 
         return (
             <div className="margin-top">
-                <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
+                <Link onClick={hashHistory.goBack} className="btn--everything">Back</Link>
 
                 <h2 className="margin-top margin-bottom">Customise location</h2>
                 <p>

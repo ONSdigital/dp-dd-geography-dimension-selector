@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 export default class Search extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class Search extends Component {
     render () {
         return (
             <div className="margin-top--2 margin-bottom--4">
-                <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
+                <Link onClick={hashHistory.goBack} className="btn--everything">Back</Link>
 
                 <h3>What location do you want?</h3>
                 <input type="text" style={{padding: "6px 12px"}}/>

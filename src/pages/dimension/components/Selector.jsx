@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 
 import config from '../../../config';
@@ -124,7 +124,7 @@ class DimensionSelector extends Component {
                 <div className="margin-top--4 margin-bottom--8">
                     <a className="btn btn--primary btn--thick btn--wide btn--big margin-right--half"
                        onClick={this.saveSelections}>Save selection</a>
-                    <a className="btn btn--secondary btn--thick btn--wide btn--big" onClick={browserHistory.goBack}>Cancel</a>
+                    <a className="btn btn--secondary btn--thick btn--wide btn--big" onClick={hashHistory.goBack}>Cancel</a>
                 </div>
             </form>
         )

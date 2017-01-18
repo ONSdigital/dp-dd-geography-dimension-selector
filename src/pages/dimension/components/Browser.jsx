@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { findOptionsByParentID, findOptionsByType } from '../utils';
 import Selector from './Selector';
@@ -49,7 +49,7 @@ class Browser extends Component {
         return (
             <div className="margin-bottom--8">
                 <div className="margin-top--2">
-                    <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
+                    <Link onClick={hashHistory.goBack} className="btn--everything">Back</Link>
                 </div>
                 {(() => {return !optionsAreParents
                     ? this.renderDimensionSelector()
