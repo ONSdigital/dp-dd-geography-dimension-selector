@@ -1,0 +1,131 @@
+[
+  {
+    "id": "D000125",
+    "name": "Sex",
+    "options": [
+      {
+        "id": "DO000153",
+        "name": "Male"
+      },
+      {
+        "id": "DO000154",
+        "name": "Female"
+      }
+    ]
+  },
+  {
+    "id": "D000124",
+    "name": "Residence Type",
+    "options": [
+      {
+        "id": "DO000161",
+        "name": "All categories: Residence Type"
+      },
+      {
+        "id": "DO000162",
+        "name": "Lives in a household"
+      },
+      {
+        "id": "DO000163",
+        "name": "Lives in a communal establishment"
+      }
+    ]
+  },
+  {
+    "id": "D000123",
+    "name": "Age",
+    "options": [
+      {
+        "id": "DO000265",
+        "name": "All categories: Age 16 and over"
+      },
+      {
+        "id": "DO000266",
+        "name": "Age 16 to 24"
+      },
+      {
+        "id": "DO000267",
+        "name": "Age 25 to 34"
+      },
+      {
+        "id": "DO000268",
+        "name": "Age 35 to 49"
+      },
+      {
+        "id": "DO000269",
+        "name": "Age 50 and over"
+      }
+    ]
+  },
+  {
+    "id": "D000126",
+    "name": "Geography",
+    "type": "geography",
+    "options": [
+      {
+        "id": "K04000001",
+        "name": "England and Wales",
+        "optionsType": "Countries",
+        "options": [
+          {
+            "id": "E92000001",
+            "name": "England",
+            "optionsType": "Regions",
+            "options": [
+              {
+                "id": "E12000001",
+                "name": "North East",
+                "optionsType": "Locations",
+                "options": [
+                  {
+                    "id": "2000017",
+                    "name": "Hartlepool"
+                  },
+                  {
+                    "id": "2000018",
+                    "name": "Middlesbrough"
+                  },
+                  {
+                    "id": "2000019",
+                    "name": "Redcar and Cleveland"
+                  },
+                  {
+                    "id": "2000020",
+                    "name": "Stockton-on-Tees"
+                  }
+                ]
+              },
+              {
+                "id": "E12000002",
+                "optionsType": "Locations",
+                "name": "North West"
+              },
+              {
+                "id": "E12000003",
+                "optionsType": "Locations",
+                "name": "Yorkshire and The Humber"
+              },
+              {
+                "id": "E12000004",
+                "optionsType": "Locations",
+                "name": "East Midlands"
+              }
+            ]
+          },
+          {
+            "id": "W92000004",
+            "name": "Wales",
+            "optionsType": "Regions",
+            "options": [
+              { "id": "W000121", "name": "North East Wales" },
+              { "id": "W000122", "name": "Mid Wales" },
+              { "id": "W000123", "name": "South West Wales" },
+              { "id": "W000124", "name": "Cardiff" },
+              { "id": "W000125", "name": "South East Wales" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

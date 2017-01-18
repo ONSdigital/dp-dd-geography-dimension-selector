@@ -1,0 +1,26 @@
+{
+  "id": "AF001EW",
+  "title": "AF001EW  Members of the Armed Forces by residence type by sex by age",
+  "url": "http://localhost:20099/datasets/AF001EW",
+  "metadata": {
+    "description": "This dataset provides 2011 Census estimates that classify usual residents aged 16 and over who are members of the armed forces by residence type (household or communal resident), by sex and by age. The estimates are as at census day, 27 March 2011."
+  },
+  "dimensions": [
+    {
+      "id": "D000125",
+      "name": "Sex"
+    },
+    {
+      "id": "D000124",
+      "name": "Residence Type"
+    },
+    {
+      "id": "D000123",
+      "name": "Age"
+    },
+    {
+      "id": "D000126",
+      "name": "2011 Statistical Geography Hierarchy"
+    }
+  ]
+}
