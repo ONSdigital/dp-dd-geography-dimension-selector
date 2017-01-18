@@ -4,11 +4,11 @@ export function findOptionsByType ({options, type}) {
     });
 }
 
-export function toggleSelectedOptions ({options, selectedStatus = true}) {
+export function toggleSelectedOptions ({options, selected = true}) {
     return options.map(option => {
-        option.selected = option.selected === false ? false : selectedStatus;
+        option.selected = selected;
         if (option.options && option.options.length > 0) {
-            option.options = toggleSelectedOptions({ options: option.options, selectedStatus });
+            option.options = toggleSelectedOptions({ options: option.options, selected });
         }
         return option;
     });
@@ -88,7 +88,7 @@ export function searchOptions({options, term = ''}) {
             let matchingOptions = searchOptions({
                 options: option.options,
                 term
-            }).map(option => Object.assign(option, {
+            }).map(option => Object.assign({}, option, {
                 // todo: should have own type
                 name: !option.found ? `${option.name} (found in ${optionsType})` : option.name,
                 found: true

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { selectAllOptions } from '../../dataset/actions';
+import { deselectAllOptions, selectAllOptions } from '../../dataset/actions';
 class Customisation extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +18,9 @@ class Customisation extends Component {
         })
     }
 
+    componentWillMount() {
+        this.props.dispatch(deselectAllOptions(this.props.dimensionID))
+    }
     render () {
         const pathname = this.props.location.pathname;
 

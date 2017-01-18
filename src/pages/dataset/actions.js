@@ -40,8 +40,8 @@ export function deselectAllOptions(dimensionID) {
             selected: false
         })
 
-        const options = toggleSelectedOptions({ options: dimension.options, selected: false})
-        dispatch(saveDimensionOptions({dimensionID, options}))
+        const options = toggleSelectedOptions({ options: dimension.options, selected: false});
+        dispatch(saveDimensionOptions({dimensionID, options}));
     }
 }
 
