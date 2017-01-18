@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import config from '../../../config';
 
-import Browser from './dimension/Browser';
-import Customisation from './dimension/Customisation';
-import Search from './dimension/Search';
-import Summary from './dimension/Summary';
+import Browser from '../../dimension/components/Browser';
+import Customisation from '../../dimension/components/Customisation';
+import Search from '../../dimension/components/Search';
+import Summary from '../../dimension/components/Summary';
 
 import {
     requestMetadata,
@@ -14,7 +14,7 @@ import {
 } from '../actions';
 
 import DimensionList from './DimensionList';
-import Selector from './dimension/Selector';
+import Selector from '../../dimension/components/Selector';
 import DocumentTitle from '../../../components/elements/DocumentTitle';
 
 const propTypes = {

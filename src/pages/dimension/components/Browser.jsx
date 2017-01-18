@@ -6,7 +6,7 @@ import Selector from './Selector';
 import {
     requestMetadata,
     requestDimensions
-} from '../../actions';
+} from '../../dataset/actions';
 
 
 const propTypes = {
