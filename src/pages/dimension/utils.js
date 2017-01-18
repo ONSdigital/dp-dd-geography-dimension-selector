@@ -73,6 +73,32 @@ export function filterOptions({options, filter = {}}) {
     });
 }
 
+export function searchOptions({options, term = ''}) {
+    let list = [];
+    options.forEach(option => {
+        if (option.name.toLowerCase().indexOf(term.toLowerCase()) > -1) {
+            list.push({
+                id: option.id,
+                name: option.name
+            })
+        }
+
+        if (option.options) {
+            let optionsType = option.optionsType;
+            let matchingOptions = searchOptions({
+                options: option.options,
+                term
+            }).map(option => Object.assign(option, {
+                // todo: should have own type
+                name: !option.found ? `${option.name} (found in ${optionsType})` : option.name,
+                found: true
+            }));
+            Array.prototype.push.apply(list, matchingOptions);
+        }
+    })
+    return list;
+}
+
 export function renderFlatHierarchy ({ hierarchy, filter = {} }) {
     const list = [];
     if (!hierarchy instanceof Array) {
