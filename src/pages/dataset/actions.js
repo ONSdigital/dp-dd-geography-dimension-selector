@@ -1,6 +1,6 @@
 import { Request } from './utils';
 import config from '../../config/index';
-import { updateOption } from '../dimension/utils';
+import { updateOption, toggleSelectedOptions } from '../dimension/utils';
 
 export const REQUEST_METADATA = 'REQUEST_METADATA';
 export const REQUEST_METADATA_SUCCESS = 'REQUEST_METADATA_SUCCESS';
@@ -13,6 +13,9 @@ export const REQUEST_DIMENSIONS_FAILURE = 'REQUEST_DIMENSIONS_FAILURE';
 export const SAVE_DIMENSION_OPTIONS = 'SAVE_DIMENSION_OPTIONS';
 export const PARSE_DIMENSIONS = 'PARSE_DIMENSIONS';
 
+export const DESELECT_ALL_OPTIONS = 'DESELECT_ALL_OPTIONS';
+export const SELECT_ALL_OPTIONS = 'SELECT_ALL_OPTIONS';
+
 export const SAVE_DOWNLOAD_OPTIONS = 'SAVE_DOWNLOAD_OPTIONS';
 export const SAVE_DOWNLOAD_PROGRESS = 'SAVE_DOWNLOAD_PROGRESS';
 export const SAVE_DOWNLOAD_OPTIONS_SUCCESS = 'SAVE_DOWNLOAD_OPTIONS_SUCCESS';
@@ -24,6 +27,36 @@ const request = new Request();
 export function cancelDownload() {
     return {
         type: CANCEL_DOWNLOAD
+    }
+}
+
+export function deselectAllOptions(dimensionID) {
+    return (dispatch, getState) => {
+        const state = getState();
+        const dimension = Object.assign({}, state.dataset.dimensions.find(dimension => dimension.id === dimensionID));
+
+        dispatch({
+            type: DESELECT_ALL_OPTIONS,
+            selected: false
+        })
+
+        const options = toggleSelectedOptions({ options: dimension.options, selected: false})
+        dispatch(saveDimensionOptions({dimensionID, options}))
+    }
+}
+
+export function selectAllOptions(dimensionID) {
+    return (dispatch, getState) => {
+        const state = getState();
+        const dimension = Object.assign({}, state.dataset.dimensions.find(dimension => dimension.id === dimensionID));
+
+        dispatch({
+            type: SELECT_ALL_OPTIONS,
+            selected: true
+        })
+
+        const options = toggleSelectedOptions({ options: dimension.options, selected: true})
+        dispatch(saveDimensionOptions({dimensionID, options}))
     }
 }
 

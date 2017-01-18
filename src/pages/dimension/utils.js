@@ -4,6 +4,16 @@ export function findOptionsByType ({options, type}) {
     });
 }
 
+export function toggleSelectedOptions ({options, selectedStatus = true}) {
+    return options.map(option => {
+        option.selected = option.selected === false ? false : selectedStatus;
+        if (option.options && option.options.length > 0) {
+            option.options = toggleSelectedOptions({ options: option.options, selectedStatus });
+        }
+        return option;
+    });
+}
+
 export function updateOption ({options, id, update}) {
     let retOption = null;
     let index = 0;

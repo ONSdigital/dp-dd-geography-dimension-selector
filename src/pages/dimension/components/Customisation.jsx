@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
-
+import { selectAllOptions } from '../../dataset/actions';
 class Customisation extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +9,13 @@ class Customisation extends Component {
     }
 
     selectAll() {
-        throw new Error('.selectAll() is not implemented yet.');
+        this.props.dispatch(selectAllOptions(this.props.dimensionID))
+        this.props.router.push({
+            pathname: this.props.location.pathname,
+            query: {
+                action: 'summary'
+            }
+        })
     }
 
     render () {
