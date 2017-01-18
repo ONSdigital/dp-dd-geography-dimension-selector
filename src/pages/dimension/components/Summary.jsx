@@ -48,6 +48,10 @@ class Summary extends Component {
     }
 
     renderSummaryItemParent({ name, id, options}) {
+        if (options.length === 0) {
+            return null;
+        }
+
         return (
             <li key={id} className="margin-left--0 margin-left--0 padding-bottom--2 col-wrap width-lg--39">
 
