@@ -42,7 +42,7 @@ bower_components
 ./[Cc]onfig/
 
 # distribution
-dist/*
+#dist/*
 build/
 
 # Temporary rules
