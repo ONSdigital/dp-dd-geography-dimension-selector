@@ -53,10 +53,7 @@ class Browser extends Component {
                 </div>
                 {(() => {return !optionsAreParents
                     ? this.renderDimensionSelector()
-                    : <div>
-                        <h2 className="margin-top margin-bottom">Customise location</h2>
-                        {this.renderOptions()}
-                    </div>
+                    : this.renderOptions()
                 })()}
             </div>
         )
@@ -90,7 +87,7 @@ class Browser extends Component {
         const action = this.props.location.query.action;
         const options = this.props.options;
 
-        return options.map((option, index) => {
+        const optionElements = options.map((option, index) => {
             const query = {
                 action,
                 id: option.id,
@@ -112,6 +109,13 @@ class Browser extends Component {
                 </div>
             )
         })
+
+        return (
+            <div>
+                <h2 className="margin-top margin-bottom">Customise location</h2>
+                {optionElements}
+            </div>
+        )
     }
 }
 
