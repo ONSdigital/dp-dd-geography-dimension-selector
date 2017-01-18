@@ -40,6 +40,11 @@ class Customisation extends Component {
                     <a onClick={this.selectAll}>All locations</a><br />
                     Add all locations in the dataset
                 </p>
+
+                <p>
+                    <Link to={{ pathname: pathname, query: { action: 'summary' }}}>Your selections</Link><br />
+                    Review your selected locations
+                </p>
             </div>
         )
     }
