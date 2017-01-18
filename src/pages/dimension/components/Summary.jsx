@@ -8,20 +8,59 @@ class Summary extends Component {
         super(props)
     }
 
-
     render () {
         const options = this.props.options;
-        const optionsAreParents = options instanceof Array && options.length > 0 && !!options[0].options;
         return (
             <div className="margin-bottom--8">
                 <div className="margin-top--2">
                     <Link onClick={browserHistory.goBack} className="btn--everything">Back</Link>
-                    <hr />
-                    <pre>
-                        {JSON.stringify(this.props.options, null, 2)}
-                    </pre>
+                    <h2 className="margin-top margin-bottom--double">Your location selection</h2>
+                    <ul className="list--neutral">
+                    {options.map(option => (
+                        this.renderSummaryItemParent(option)
+                    ))}
+                    </ul>
+                </div>
+
+                <div className="margin-bottom">
+                    <a onClick={browserHistory.goBack} className="btn--everything">Add more locations</a>
+                </div>
+                <div className="margin-bottom--double">
+                    <a className="btn btn--primary btn--thick btn--wide btn--big margin-right--half">Save selection</a>
                 </div>
             </div>
+        )
+    }
+
+    renderSummaryItemParent({ name, id, options}) {
+        return (
+            <li key={id} className="margin-left--0 margin-left--0 padding-bottom--2 col-wrap width-lg--39">
+
+                <div className="col margin-left--0 width-lg--39 border-bottom--gallery-md padding-bottom--2">
+                    <h3 className="col col--md-34 col--lg-34">{name} ({options.length})</h3>
+                    <div className="col col--md-5 col--lg-5 float-right">
+                        <a>Remove all</a>
+                    </div>
+                </div>
+                <ul className="list--neutral col width-lg--39 margin-left--0 margin-top--0 border-bottom--gallery-md">
+                {options.map(option => (
+                    this.renderSummaryItemChild(option)
+                ))}
+                </ul>
+            </li>
+        )
+    }
+
+    renderSummaryItemChild({ name, id, options}) {
+        return (
+            <li key={id} className="margin-left--0 col width-lg--39 border-bottom--gallery-md padding-bottom--2">
+                    <div className="col col--md-34 col--lg-34">
+                        <span>{name}</span>
+                    </div>
+                    <div className="col col--md-5 col--lg-5 float-right">
+                        <a>Remove</a>
+                    </div>
+            </li>
         )
     }
 }
