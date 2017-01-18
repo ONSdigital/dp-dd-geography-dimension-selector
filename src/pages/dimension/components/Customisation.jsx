@@ -31,7 +31,7 @@ class Customisation extends Component {
                 </p>
 
                 <p>
-                    <a onClick={this.selectAll}>All locatinos</a><br />
+                    <a onClick={this.selectAll}>All locations</a><br />
                     Add all locations in the dataset
                 </p>
             </div>
