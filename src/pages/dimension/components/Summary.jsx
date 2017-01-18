@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
+import config from '../../../config';
 import { renderFlatHierarchy } from '../utils';
 import { saveDimensionOptions } from '../../dataset/actions';
 
@@ -24,7 +25,11 @@ class Summary extends Component {
     }
 
     render () {
+        const dimensionID = this.props.dimensionID;
         const options = this.props.options;
+        const currentPath = this.props.location.pathname;
+        const dimensionsPath = `${config.BASE_PATH}/dataset/${dimensionID}/dimensions`;
+
         return (
             <div className="margin-bottom--8">
                 <div className="margin-top--2">
@@ -38,10 +43,12 @@ class Summary extends Component {
                 </div>
 
                 <div className="margin-bottom">
-                    <a onClick={browserHistory.goBack} className="btn--everything">Add more locations</a>
+                    <Link to={{pathname: currentPath, query: { action: 'customise' }}}
+                          className="btn--everything">Add more locations</Link>
                 </div>
                 <div className="margin-bottom--double">
-                    <a className="btn btn--primary btn--thick btn--wide btn--big margin-right--half">Save selection</a>
+                    <Link to={dimensionsPath}
+                          className="btn btn--primary btn--thick btn--wide btn--big margin-right--half">Save selection</Link>
                 </div>
             </div>
         )
