@@ -73,8 +73,12 @@ class Browser extends Component {
             dimensionID: this.props.params.dimensionID,
             options: this.props.options,
             onSave: () => {
-                debugger;
-                //this.props.router.push()
+                this.props.router.push({
+                    pathname: this.props.location.pathname,
+                    query: {
+                        action: 'summary'
+                    }
+                })
             }
         }
 
