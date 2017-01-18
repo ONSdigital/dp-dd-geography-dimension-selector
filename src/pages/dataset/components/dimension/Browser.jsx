@@ -53,7 +53,10 @@ class Browser extends Component {
                 </div>
                 {(() => {return !optionsAreParents
                     ? this.renderDimensionSelector()
-                    : <ul>{this.renderOptions()}</ul>
+                    : <div>
+                        <h2 className="margin-top margin-bottom">Customise location</h2>
+                        {this.renderOptions()}
+                    </div>
                 })()}
             </div>
         )

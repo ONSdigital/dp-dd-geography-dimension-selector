@@ -112,7 +112,7 @@ class DimensionSelector extends Component {
 
         return (
             <form className="form">
-                <h1 className="margin-top--half margin-bottom">What do you want to include?</h1>
+                <h2 className="margin-top--half margin-bottom">What do you want to include?</h2>
                 <div className="margin-bottom--2">
                     <ToggleLink label="Enable all" enabled={!allEnabled} onClick={this.toggleAll(true)} />
                     <ToggleLink label="Disable all" enabled={!allDisabled} onClick={this.toggleAll(false)} />
