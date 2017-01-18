@@ -1,5 +1,6 @@
 import { Request } from './utils';
 import config from '../../config/index';
+import { updateOption } from '../dimension/utils';
 
 export const REQUEST_METADATA = 'REQUEST_METADATA';
 export const REQUEST_METADATA_SUCCESS = 'REQUEST_METADATA_SUCCESS';
@@ -58,23 +59,22 @@ function saveDownloadProgress(json) {
 }
 
 export function saveDimensionOptions({dimensionID, options}) {
-
     return (dispatch, getState) => {
         const state = getState();
-
-        // todo: use deep merge for merging hierarchies -> https://www.npmjs.com/package/deepmerge
         const dimensions = state.dataset.dimensions.map((dimension) => {
             dimension = Object.assign({}, dimension);
             if (dimension.id !== dimensionID) {
                 return dimension;
             }
 
-            dimension.options = dimension.options.map((option) => {
-                option.selected = options.find((selectionOption) => {
-                    return option.id === selectionOption.id;
-                }).selected;
-                return Object.assign({}, option);
+            options.forEach(option => {
+                updateOption({
+                    id: option.id,
+                    options: dimension.options,
+                    update: { selected: option.selected }
+                })
             });
+
             return dimension;
         });
 
