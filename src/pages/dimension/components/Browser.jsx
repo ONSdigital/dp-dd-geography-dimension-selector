@@ -94,8 +94,8 @@ class Browser extends Component {
                 parent
             };
             let label = option.name;
-            if (option.optionTypes) {
-                label = `${option.optionTypes} in ${option.name}`;
+            if (option.optionsType) {
+                label = `${option.optionsType} in ${option.name}`;
             }
             if (option.options) {
                 label += ` (${option.options.length})`;

@@ -65,17 +65,17 @@
       {
         "id": "K04000001",
         "name": "England and Wales",
-        "optionTypes": "Countries",
+        "optionsType": "Countries",
         "options": [
           {
             "id": "E92000001",
             "name": "England",
-            "optionTypes": "Regions",
+            "optionsType": "Regions",
             "options": [
               {
                 "id": "E12000001",
                 "name": "North East",
-                "optionTypes": "Locations",
+                "optionsType": "Locations",
                 "options": [
                   {
                     "id": "2000017",
@@ -97,17 +97,17 @@
               },
               {
                 "id": "E12000002",
-                "optionTypes": "Locations",
+                "optionsType": "Locations",
                 "name": "North West"
               },
               {
                 "id": "E12000003",
-                "optionTypes": "Locations",
+                "optionsType": "Locations",
                 "name": "Yorkshire and The Humber"
               },
               {
                 "id": "E12000004",
-                "optionTypes": "Locations",
+                "optionsType": "Locations",
                 "name": "East Midlands"
               }
             ]
@@ -115,7 +115,7 @@
           {
             "id": "W92000004",
             "name": "Wales",
-            "optionTypes": "Regions",
+            "optionsType": "Regions",
             "options": [
               { "id": "W000121", "name": "North East Wales" },
               { "id": "W000122", "name": "Mid Wales" },
