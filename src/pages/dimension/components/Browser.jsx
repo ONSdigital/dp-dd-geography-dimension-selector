@@ -90,8 +90,7 @@ class Browser extends Component {
         const optionElements = options.map((option, index) => {
             const query = {
                 action,
-                id: option.id,
-                parent
+                id: option.id
             };
             let label = option.name;
             if (option.optionsType) {
