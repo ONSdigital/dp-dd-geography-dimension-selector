@@ -36,11 +36,13 @@ class Dimension extends Component {
 
     componentWillMount() {
         const dispatch = this.props.dispatch;
-        if (!this.props.title) {
+        if (!this.props.hasMetadata) {
             this.state.initialFetchRequired = true;
             return dispatch(requestMetadata(this.props.params.id));
         }
-        dispatch(requestDimensions(this.props.params.id));
+        if (!this.props.hasDimensions) {
+            dispatch(requestDimensions(this.props.params.id));
+        }
     }
 
     shouldComponentUpdate(nextProps) {

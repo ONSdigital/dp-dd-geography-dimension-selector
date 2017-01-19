@@ -117,7 +117,7 @@ export function saveDimensionOptions({dimensionID, options}) {
 }
 
 export function requestDimensions(datasetID) {
-    const url = `${API_URL}/datasets/${datasetID}/dimensions.json`
+    const url = `${API_URL}/datasets/${datasetID}/dimensions.json`;
 
     return (dispatch) => {
         dispatch({
@@ -166,6 +166,7 @@ export function parseDimensions(datasetID, dimensionsJSON) {
     }
 
     function parseOptions(options, selectedStatus = true) {
+
         return options.map(option => {
             optionsCount ++;
             option.selected = option.selected === false ? false : selectedStatus;

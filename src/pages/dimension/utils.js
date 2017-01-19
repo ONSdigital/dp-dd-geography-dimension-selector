@@ -79,7 +79,8 @@ export function searchOptions({options, term = ''}) {
         if (option.name.toLowerCase().indexOf(term.toLowerCase()) > -1) {
             list.push({
                 id: option.id,
-                name: option.name
+                name: option.name,
+                selected: option.selected
             })
         }
 
