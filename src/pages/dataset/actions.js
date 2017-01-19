@@ -37,7 +37,7 @@ export function deselectAllOptions(dimensionID) {
 
         dispatch({
             type: DESELECT_ALL_OPTIONS,
-            selected: false
+            dimensionID
         })
 
         const options = toggleSelectedOptions({ options: dimension.options, selected: false});
@@ -52,7 +52,7 @@ export function selectAllOptions(dimensionID) {
 
         dispatch({
             type: SELECT_ALL_OPTIONS,
-            selected: true
+            dimensionID
         })
 
         const options = toggleSelectedOptions({ options: dimension.options, selected: true})
@@ -92,6 +92,7 @@ function saveDownloadProgress(json) {
 }
 
 export function saveDimensionOptions({dimensionID, options}) {
+    debugger;
     return (dispatch, getState) => {
         const state = getState();
         const dimensions = state.dataset.dimensions.map((dimension) => {

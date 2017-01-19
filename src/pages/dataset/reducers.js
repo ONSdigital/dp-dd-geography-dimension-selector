@@ -2,7 +2,8 @@ import {
     REQUEST_METADATA_SUCCESS,
     PARSE_DIMENSIONS,
     SAVE_DOWNLOAD_PROGRESS,
-    CANCEL_DOWNLOAD
+    CANCEL_DOWNLOAD,
+    DESELECT_ALL_OPTIONS
 } from './actions';
 
 const defaultState = {
@@ -61,6 +62,16 @@ export default function (state = defaultState, action) {
                     cancelled: true
                 })
             });
+            break;
+        case DESELECT_ALL_OPTIONS:
+            const dimensions = state.dataset.dimensions.map(dimension => {
+                if (dimension.id !== action.dimensionID) {
+                    return dimension;
+                }
+                dimension.edited = true;
+                return dimension;
+            })
+            state = Object.assign({}, state, { dimensions });
             break;
     }
 

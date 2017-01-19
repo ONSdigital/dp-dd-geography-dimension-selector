@@ -19,8 +19,11 @@ class Customisation extends Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(deselectAllOptions(this.props.dimensionID))
+        if (!this.props.dimension.edited) {
+            this.props.dispatch(deselectAllOptions(this.props.dimensionID))
+        }
     }
+
     render () {
         const pathname = this.props.location.pathname;
 
