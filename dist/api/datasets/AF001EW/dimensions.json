@@ -125,6 +125,163 @@
             ]
           }
         ]
+      },
+      {
+        "id": "LA0000001",
+        "name": "England",
+        "optionsType": "Local authority districts",
+        "options": [
+          {
+            "id": "EA0000010",
+            "name": "North East",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "EA0000021",
+                "name": "Northumberland"
+              },
+              {
+                "id": "EA0000022",
+                "name": "County Durham"
+              },
+              {
+                "id": "EA0000023",
+                "name": "Tyne and Wear"
+              }
+            ]
+          },
+          {
+            "id": "NWA0000010",
+            "name": "North West",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "NWA00000211",
+                "name": "Cheshire, Cumbria"
+              },
+              {
+                "id": "NWA00000221",
+                "name": "Greater Manchester"
+              },
+              {
+                "id": "NWA0000022C",
+                "name": "Lancashire and Merseyside"
+              }
+            ]
+          },
+          {
+            "id": "YHA0000010",
+            "name": "Yorkshire and the Humber",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "YHA0000021",
+                "name": "Yorkshire"
+              },
+              {
+                "id": "YHA0000022",
+                "name": "North Lincolnshire"
+              },
+              {
+                "id": "YHA0000023",
+                "name": "North East Lincolnshire"
+              }
+            ]
+          },
+          {
+            "id": "EM0000010",
+            "name": "East Midlands",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "EM0000021",
+                "name": "Derbyshire"
+              },
+              {
+                "id": "EM0000022",
+                "name": "Leicestershire"
+              },
+              {
+                "id": "EM0000023",
+                "name": "Lincolnshire"
+              },
+              {
+                "id": "EM0000024",
+                "name": "Northamptonshire"
+              },
+              {
+                "id": "EM0000025",
+                "name": "Nottinghamshire"
+              },
+              {
+                "id": "EM0000026",
+                "name": "Rutland."
+              }
+            ]
+          },
+          {
+            "id": "EA0000010WM",
+            "name": "West Midlands",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "EA000002WM1",
+                "name": "Herefordshire"
+              },
+              {
+                "id": "EA000002WM2",
+                "name": "Shropshire"
+              },
+              {
+                "id": "EA0000023W3",
+                "name": "Staffordshire"
+              },
+              {
+                "id": "EA000002W4",
+                "name": "Warwickshire"
+              },
+              {
+                "id": "EA000002WM5",
+                "name": "West Midlands county"
+              },
+              {
+                "id": "EA000002WM6",
+                "name": "Worcestershire"
+              }
+            ]
+          },
+          {
+            "id": "EA0000010E",
+            "name": "East of England",
+            "optionsType": "Counties",
+            "options": [
+              {
+                "id": "EA0000021E1",
+                "name": " Bedfordshire"
+              },
+              {
+                "id": "EA0000022E2",
+                "name": "Cambridgeshire"
+              },
+              {
+                "id": "EA0000023E3",
+                "name": "Essex"
+              },
+              {
+                "id": "EA0000022E4",
+                "name": "Hertfordshire"
+              },
+              {
+                "id": "EA0000023E5",
+                "name": "Norfolk"
+              },
+              {
+                "id": "EA0000023E6",
+                "name": "Suffolk"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
