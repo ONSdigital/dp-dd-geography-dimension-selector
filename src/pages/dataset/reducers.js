@@ -64,7 +64,7 @@ export default function (state = defaultState, action) {
             });
             break;
         case DESELECT_ALL_OPTIONS:
-            const dimensions = state.dataset.dimensions.map(dimension => {
+            const dimensions = state.dimensions.map(dimension => {
                 if (dimension.id !== action.dimensionID) {
                     return dimension;
                 }

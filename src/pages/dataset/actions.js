@@ -92,7 +92,6 @@ function saveDownloadProgress(json) {
 }
 
 export function saveDimensionOptions({dimensionID, options}) {
-    debugger;
     return (dispatch, getState) => {
         const state = getState();
         const dimensions = state.dataset.dimensions.map((dimension) => {

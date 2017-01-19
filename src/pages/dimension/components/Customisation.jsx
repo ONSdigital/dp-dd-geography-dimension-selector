@@ -63,6 +63,7 @@ function mapStateToProps(state, ownProps) {
     });
 
     return {
+        hasDimension: state.dataset.hasDimensions,
         dimension
     }
 }
